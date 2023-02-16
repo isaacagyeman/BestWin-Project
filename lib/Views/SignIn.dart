@@ -16,7 +16,6 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +28,7 @@ class _SignInState extends State<SignIn> {
               const Image(image: AssetImage('assets/images/logo1.png')),
               const Text(
                 'Hi! Welcome',
-                style: TextStyle(
-                    fontSize: 35.0,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Comfortaa'),
+                style: TextStyle(fontSize: 35.0, fontWeight: FontWeight.w600, fontFamily: 'Comfortaa'),
               ),
               const Text(
                 'Sign in to your account',
@@ -40,7 +36,8 @@ class _SignInState extends State<SignIn> {
                     color: Colors.grey,
                     fontSize: 22.0,
                     fontWeight: FontWeight.w400,
-                    fontFamily: 'Roboto'),
+                    fontFamily: 'Roboto'
+                    ),
               ),
               const SizedBox(height: 30.0),
               LoginTextField(
@@ -51,16 +48,11 @@ class _SignInState extends State<SignIn> {
               const SizedBox(height: 10.0),
               LoginTextField(
                 hinText: 'Password',
-                obscureText: obscureText,
+                obscureText: true,
                 label: 'Password',
                 icon: const Icon(Icons.lock),
                 suffix: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        obscureText = !obscureText;
-                      });
-                    },
-                    icon: const Icon(Icons.visibility)),
+                    onPressed: () {}, icon: const Icon(Icons.visibility)),
               ),
               const SizedBox(height: 10.0),
               Button(
@@ -84,13 +76,7 @@ class _SignInState extends State<SignIn> {
                       child: Divider(
                     thickness: 2.0,
                   )),
-                  Text(
-                    'Or Sign in with',
-                    style: TextStyle(
-                        fontSize: 13.0,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Roboto'),
-                  ),
+                  Text('Or Sign in with', style: TextStyle(fontSize: 13.0 , fontWeight: FontWeight.w400, fontFamily: 'Roboto'),),
                   Expanded(child: Divider(thickness: 2.0))
                 ],
               ),
@@ -108,11 +94,7 @@ class _SignInState extends State<SignIn> {
                     SizedBox(width: 10.0),
                     Text(
                       'SIGN UP WITH APPLE',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'RobotoCondensed'),
+                      style: TextStyle(color: Colors.black, fontSize: 15.0, fontWeight: FontWeight.w500, fontFamily: 'RobotoCondensed'),
                     )
                   ],
                 ),
@@ -131,11 +113,7 @@ class _SignInState extends State<SignIn> {
                     Image(image: AssetImage('assets/images/google_40px.png')),
                     SizedBox(width: 10.0),
                     Text('SIGN UP WITH GOOGLE',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'RobotoCondensed'))
+                        style: TextStyle(color: Colors.black, fontSize: 15.0, fontWeight: FontWeight.w500, fontFamily: 'RobotoCondensed'))
                   ],
                 ),
               ),
@@ -147,10 +125,11 @@ class _SignInState extends State<SignIn> {
                   const Text(
                     'Forgotten password?',
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'RobotoCondensed'),
+                      color: Colors.black,
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'RobotoCondensed'
+                    ),
                   ),
                   TextButton(
                       onPressed: () {
@@ -159,10 +138,7 @@ class _SignInState extends State<SignIn> {
                             MaterialPageRoute(
                                 builder: (context) => const ResetPage()));
                       },
-                      child: const Text(
-                        'Reset',
-                        style: TextStyle(fontFamily: 'RobotoCondensed'),
-                      ))
+                      child: const Text('Reset', style: TextStyle(fontFamily: 'RobotoCondensed'),))
                 ],
               )
             ],
